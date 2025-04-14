@@ -1,7 +1,16 @@
 resource "aws_s3_bucket" "artifact_bucket" {
   bucket = "your-unique-artifact-bucket-name"  # Choose a unique name for the S3 bucket
   acl    = "private"
+
+  # Enable versioning for the bucket (optional but recommended)
+  versioning {
+    enabled = true
+  }
+
+  tags       = var.tags
 }
+
+
 
 # CodePipeline
 resource "aws_codepipeline" "infra_pipeline" {
