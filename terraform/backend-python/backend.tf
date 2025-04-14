@@ -1,4 +1,4 @@
-
+/*
 terraform {
   backend "s3" {
     bucket = "aws-prod-terraform-state-bucket"
@@ -7,4 +7,4 @@ terraform {
     dynamodb_table = "terraform-locks"
     encrypt = true
   }
-}
+}*/

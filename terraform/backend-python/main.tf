@@ -2,34 +2,6 @@ provider "aws" {
   region = var.region
 }
 
-resource "aws_s3_bucket" "terraform_state" {
-  bucket = "aws-prod-terraform-state-bucket"
-  acl    = "private"
-  
-  tags       = var.tags
-}
-
-resource "aws_s3_bucket_object" "terraform_state_file" {
-  bucket = aws_s3_bucket.terraform_state.bucket
-  key    = "terraform/state"
-  acl    = "private"
-
-  tags       = var.tags
-}
-
-
-terraform {
-  backend "s3" {
-    bucket = "aws-prod-terraform-state-bucket"
-    key    = "terraform/state"
-    region = "ap-south-1"
-    dynamodb_table = "terraform-locks"
-    encrypt = true
-  }
-}
-
-
-
 data "aws_availability_zones" "available" {}
 
 resource "aws_vpc" "prod" {
