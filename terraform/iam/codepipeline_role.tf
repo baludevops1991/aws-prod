@@ -27,12 +27,16 @@ resource "aws_iam_role_policy" "codepipeline_policy" {
           "codecommit:Describe*",
           "s3:*",
           "iam:GetRole",
-          "iam:PassRole",   # Grant permission to pass the roles
+          "iam:PassRole",   
           "cloudwatch:PutMetricData",
           "sns:*"
         ]
-        Resource = "*"
+        Resource = [
+          var.codebuild_role_arn,
+          var.codedeploy_role_arn
+        ]
       }
     ]
   })
 }
+
