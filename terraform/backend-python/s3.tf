@@ -1,4 +1,4 @@
-/*resource "aws_s3_bucket" "terraform_state" {
+resource "aws_s3_bucket" "terraform_state" {
   bucket = "aws-prod-terraform-state-bucket"
   acl    = "private"
   
@@ -25,5 +25,3 @@ resource "aws_dynamodb_table" "terraform_locks" {
 
   tags       = var.tags
 }
-
-*/
