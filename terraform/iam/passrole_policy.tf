@@ -1,4 +1,4 @@
-resource "aws_iam_policy" "passrole_policy" {
+/*resource "aws_iam_policy" "passrole_policy" {
   name        = "AllowPassRoleForCodeServices"
   description = "Allows passing roles to CodePipeline, CodeBuild, and CodeDeploy"
 
@@ -16,4 +16,4 @@ resource "aws_iam_policy" "passrole_policy" {
       }
     ]
   })
-}
+}*/

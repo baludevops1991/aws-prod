@@ -13,8 +13,25 @@
   })
 }
 
-resource "aws_iam_role_policy_attachment" "codedeploy_policy" {
-  role       = aws_iam_role.codedeploy_role.name
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSCodeDeployRole"
+resource "aws_iam_role_policy" "codedeploy_policy" {
+  role = aws_iam_role.codedeploy_role.name
+  name = "CodeDeployPolicy"
+
+  policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Effect   = "Allow"
+        Action   = [
+          "s3:*",
+          "ec2:Describe*",
+          "codedeploy:*",
+          "iam:GetRole",
+          "cloudwatch:PutMetricData"
+        ]
+        Resource = "*"
+      }
+    ]
+  })
 }
 */

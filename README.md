@@ -8,7 +8,7 @@ your-repo/
 │
 │   ├── iam/
 │   │   ├── codebuild_role.tf    # References to manually created IAM roles
-│   │   ├── codedeploy_role.tf   # Optional, only if using CodeDeploy
+│   │   ├── codedeploy_role.tf   # IAM role for CodeDeploy
 │   │   └── codepipeline_role.tf
 │
 │   ├── codebuild/
@@ -18,13 +18,13 @@ your-repo/
 │   ├── codepipeline/
 │   │   └── codepipeline.tf      # Pipeline setup using GitHub as source
 │
+│   ├── codedeploy/
+│   │   ├── appspec.yml          # CodeDeploy configuration file for EC2 deployment
+│   │   └── codedeploy.tf        # CodeDeploy setup for EC2 instances
+│
 │   ├── variables.tf             # Shared variables
 │   └── terraform.tfvars         # Variable values (tokens, repo info, ARNs)
 │
-├── appspec.yml                  # Only if CodeDeploy to EC2 is used
-├── scripts/                     # Optional scripts if using EC2 + CodeDeploy
-│   ├── install_dependencies.sh
-│   └── start_server.sh
 ├── pipeline.json                # Used locally to create CodePipeline
 ├── .gitignore
-└── README.md
+└── README.md                    # Documentation for the project setup

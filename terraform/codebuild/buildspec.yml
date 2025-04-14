@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      terraform: 1.6
+      terraform: 1.11.3
       # python: 3.8  # Uncomment if you need Python for Lambda or scripting
     commands:
       - echo Installing Terraform dependencies
