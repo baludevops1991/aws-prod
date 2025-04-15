@@ -14,13 +14,13 @@ resource "aws_codepipeline" "terraform_pipeline" {
       name             = "SourceAction"
       category         = "Source"
       owner            = "AWS"
-      provider         = "CodeStarSourceConnection"   # Updated to CodeStarSourceConnection
+      provider         = "CodeStarSourceConnection" # Updated to CodeStarSourceConnection
       version          = "1"
       output_artifacts = ["SourceOutput"]
       run_order        = 1
 
       configuration = {
-        ConnectionArn = var.codestar_connection_arn
+        ConnectionArn    = var.codestar_connection_arn
         FullRepositoryId = "${var.github_owner}/${var.github_repo}"
         BranchName       = var.github_branch
         DetectChanges    = "true"

@@ -60,7 +60,7 @@ resource "aws_route_table_association" "public" {
 
 resource "aws_eip" "nat" {
   depends_on = [aws_internet_gateway.igw]
-  tags   = var.tags
+  tags       = var.tags
 }
 
 
