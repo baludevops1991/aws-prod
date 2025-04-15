@@ -34,9 +34,9 @@ output "alb_dns_name" {
 }
 
 
-/*output "codebuild_project_name" {
+output "codebuild_project_name" {
   value = aws_codebuild_project.terraform_build.name
-}*/
+}
 
 /*output "codedeploy_app_name" {
   value = aws_codedeploy_app.terraform_app.name
