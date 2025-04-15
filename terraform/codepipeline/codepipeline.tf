@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "artifact_bucket" {
-  bucket = "your-unique-artifact-bucket-name"  # Choose a unique name for the S3 bucket
+  bucket = "aws-prod-artifact-bucket"  # Choose a unique name for the S3 bucket
   acl    = "private"
 
   # Enable versioning for the bucket (optional but recommended)
