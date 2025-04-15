@@ -59,7 +59,7 @@ resource "aws_route_table_association" "public" {
 }
 
 resource "aws_eip" "nat" {
-  domain = "vpc"
+  depends_on = [aws_internet_gateway.igw]
   tags   = var.tags
 }
 
